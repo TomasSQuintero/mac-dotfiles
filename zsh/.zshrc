@@ -57,3 +57,7 @@ compare() {
 }
 
 export PATH="/opt/homebrew/bin:$PATH"
+
+fdiff() {
+    git diff --no-index --color=always -- "$1" "$2" | delta -R
+}
