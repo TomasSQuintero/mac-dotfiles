@@ -19,4 +19,4 @@ require("plugins.calculate")
 require("plugins.aerial")
 
 -- theme
-require("plugins.themes.vague")
+require("plugins.themes.gruvbox")
