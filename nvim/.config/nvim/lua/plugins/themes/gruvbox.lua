@@ -17,3 +17,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_set_hl(0, "YankFlash", { bg = "#3daee9", fg = "#282828" })
+
