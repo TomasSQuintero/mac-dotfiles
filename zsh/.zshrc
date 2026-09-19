@@ -3,6 +3,14 @@ alias ls='ls --color=auto'
 #PROMPT='tom@mac %~ %# '
 PROMPT='%~ > '
 
+#compinit re-checks all completion files every shell start, which gets slow. Cache it
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
+
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
 
@@ -20,6 +28,11 @@ setopt APPEND_HISTORY
 
 # auto cd, no hace falta hacer cd, solo basta con el nombre del directorio
 setopt AUTO_CD
+
+# setopt CORRECT
+setopt EXTENDED_GLOB
+zstyle ':completion:*' menu select
+setopt GLOB_DOTS
 
 # vim mode
 bindkey -v
