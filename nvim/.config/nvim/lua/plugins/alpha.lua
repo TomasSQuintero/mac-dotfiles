@@ -23,19 +23,17 @@ dashboard.section.header.val = {
 	[[      ⠈⠈⠁⠁⠁⠈⠈⠊]],
 	[[              ]],
 	[[              ]],
-	[[              ]],
-	[[              ]],
 }
 
 dashboard.section.buttons.val = {
-	-- dashboard.button("f", "  find file", ":Telescope find_files<CR>"),
-	dashboard.button("a", "󰘓  find all",":Telescope find_files find_command=rg,--files,--hidden,--glob,!.git/*<CR>"),
-	-- dashboard.button("c", "  config", ":e ~/.config/nvim<CR>"),
-	-- dashboard.button("r", "  recent files", ":Telescope oldfiles<CR>"),
-	dashboard.button("f", "  find file", ":Telescope find_files find_command=rg,--files,--hidden,--glob,!.git/*<CR>"),
-	dashboard.button("g", "  find text", ":Telescope live_grep<CR>"),
-	dashboard.button("n", "  new file", ":ene <BAR> startinsert<CR>"),
-	dashboard.button("q", "  quit", ":qa<CR>"),
+	-- dashboard.button("f", "  find file", ":FzfLua files<CR>"),
+	-- dashboard.button("a", "󰘓  find all", ":lua require('fzf-lua').files({ hidden = true, cmd = \"rg --files --hidden --glob '!.git/*'\" })<CR>"),
+	-- dashboard.button("c", "  config", ":e ~/.config/nvim<CR>"),
+	-- dashboard.button("r", "  recent files", ":FzfLua oldfiles<CR>"),
+	dashboard.button("f", "  find file", ":lua require('fzf-lua').files({ hidden = true, cmd = \"rg --files --hidden --glob '!.git/*'\" })<CR>"),
+	dashboard.button("g", "  find text", ":FzfLua live_grep<CR>"),
+	dashboard.button("n", "  new file", ":ene <BAR> startinsert<CR>"),
+	dashboard.button("q", "  quit", ":qa<CR>"),
 }
 
 dashboard.section.footer.val = {
