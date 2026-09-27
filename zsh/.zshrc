@@ -52,7 +52,8 @@ function y() {
 }
 
 # git add, commit with date-time as message and push
-syncnotes() {
+# syncnotes() {
+sync() {
     git add .
     git commit -m "$(date '+%Y-%m-%d %H:%M:%S')"
     git push
