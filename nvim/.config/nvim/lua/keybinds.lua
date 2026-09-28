@@ -200,3 +200,7 @@ vim.keymap.set('v', '<leader>b', function()
   toggle_bullets(s, e)
   vim.cmd('normal! \27') -- exit visual mode
 end, { desc = 'Toggle markdown bullet' })
+
+-- insert mode deletion
+vim.keymap.set("i", "<C-l>", "<C-o>x", { desc = "Delete letter to the right" })
+vim.keymap.set("i", "<C-e>", "<C-o>dw", { desc = "Delete word to the right" })

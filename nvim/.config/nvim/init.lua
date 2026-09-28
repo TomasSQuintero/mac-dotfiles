@@ -45,7 +45,7 @@ vim.opt.inccommand = "split"
 vim.opt.mousescroll = "ver:3,hor:0"
 
 -- vim.cmd([[set mouse=]])
-vim.cmd([[set noswapfile]])
+-- vim.cmd([[set noswapfile]])
 vim.cmd([[hi @lsp.type.number gui=italic]])
 
 -- corremos :PackUpdate para actualizar los plugins
