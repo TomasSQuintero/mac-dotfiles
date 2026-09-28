@@ -52,9 +52,8 @@ reveal = [
 	{ run = 'termux-open %d1',                                          desc = "Reveal", for = "android", orphan = true },
 	{ run = 'clear; exiftool %s1; echo "Press enter to exit"; read _', desc = "Show EXIF", for = "unix", block = true },
 ]
-zathura = [
-	{ run = 'setsid zathura %s', orphan = true, desc = "zathura", for = "linux" },
-	{ run = 'setsid zathura %s', orphan = true, desc = "zathura", for = "macos" },
+sioyek = [
+	{ run = 'sioyek %s', orphan = true, desc = "sioyek", for = "macos" },
 ]
 qimgv = [
 	{ run = 'qimgv %s1', orphan = true, desc = "qimgv", for = "linux" },
@@ -79,7 +78,7 @@ rules = [
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = "download" },
 	# PDF
-	{ mime = "application/pdf", use = [ "zathura", "reveal" ] },
+	{ mime = "application/pdf", use = [ "sioyek", "reveal" ] },
 	# Fallback
 	{ url = "*", use = [ "open", "reveal" ] },
 ]
