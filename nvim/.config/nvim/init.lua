@@ -21,7 +21,7 @@ vim.opt.softtabstop = 4
 vim.opt.numberwidth = 1
 vim.opt.signcolumn = "number"
 vim.opt.foldcolumn = "0"
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
 
 -- search
 vim.opt.ignorecase = true
