@@ -89,6 +89,37 @@ fdiff() {
 
 . "$HOME/.cargo/env" 
 
+dotdirs=(
+    ~/.config/kitty
+    ~/.config/mpv
+    ~/.config/nvim
+    ~/.config/sioyek
+    ~/.config/tmux
+    ~/.config/wallpapers
+    ~/.config/yazi
+    ~/.config/zathura
+    ~/.zshrc
+)
+
+dots() {
+    local target=~/mac-dotfiles
+
+    mkdir -p "$target"
+
+    for item in "${dotdirs[@]}"; do
+        item="${item%/}"              # strip any trailing slash
+        local name="${item:t}"        # zsh basename
+
+        if [ -e "$item" ]; then
+            # Remove only the stale copy, leaving .git, README, etc. alone
+            rm -rf "${target:?}/$name"
+            cp -R "$item" "$target/$name"
+        else
+            echo "Warning: '$item' does not exist"
+        fi
+    done
+}
+
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
