@@ -35,8 +35,8 @@ zstyle ':completion:*' menu select
 setopt GLOB_DOTS
 
 # vim mode
-bindkey -v
-export KEYTIMEOUT=1   # reduces lag when switching modes (in ms*10)
+# bindkey -v
+# export KEYTIMEOUT=1   # reduces lag when switching modes (in ms*10)
 
 # fzf
 source <(fzf --zsh)
